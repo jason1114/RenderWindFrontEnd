@@ -6,12 +6,68 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
+  <title>Render Wind</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../build/styles/all.min.css">
 </head>
 <body>
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="#"><img class="logo" alt="render-wind" src="../images/render-wind-small.png"></a></h1>
+      </li>
+       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li class="active"><a href="#">Right Button Active</a></li>
+        <li class="has-dropdown">
+          <a href="#">Right Button Dropdown</a>
+          <ul class="dropdown">
+            <li><a href="#">First link in dropdown</a></li>
+            <li class="active"><a href="#">Active link in dropdown</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Left Nav Section -->
+      <ul class="left">
+        <li><a href="#">Left Nav Button</a></li>
+      </ul>
+    </section>
+  </nav>
+
+  <div id="fss-container" class="container">
+      <div id="output" class="container">
+      </div>
+      <div id="ui" class="wrapper">
+        <article class="intro">
+          <header id="header" class="header">
+            <h1><image class="logo" alt="render-wind" src="../images/render-wind.png"></h1>
+          </header>
+          <div class="text">
+            The best cloud render engine <br>
+            in the world, powerful and fast.
+          </div>
+          <div class="btn-signup">
+            <a href="#" class="button large">Sign Up For Free</a>
+          </div>
+        </article>
+        <img class="character" src="../images/rack-it-ralph.png">
+      </div>
+      <div id="controls" class="controls" style="display: none;">
+      </div>
+  </div>
+  <div id="info-bar">
+    <span>Last update on Github  Oct 19, 2014 | Help us make this project better!</span>
+    <a href="#" class="button">Contribute</a>
+  </div>
+  
+
   <ul class="menu">
     <li><a href="#/view1">view1</a></li>
     <li><a href="#/view2">view2</a></li>
@@ -28,6 +84,53 @@
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
+  <footer>
+    <style type="text/css">
+      body > footer > .container: {
+        margin: 0 auto;
+
+      }
+    </style>
+    <div class="container">
+      <div class="left">
+        <div class="left">
+          <section>
+            <header>Product</header>
+            <ul>
+              <li><a href>Pricing</a></li>
+              <li><a href>Blog</a></li>
+              <li><a href>Case Studies</a></li>
+            </ul>
+          </section>
+        </div>
+        <div class="right">
+          <section>
+            <header>Team</header>
+            <ul>
+              <li><a href>About</a></li>
+              <li><a href>Jobs</a></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+      <div class="right">
+        <section>
+          <header>Connect</header>
+          <ul>
+            <li><a href>Twitter</a></li>
+            <li><a href>Weibo</a></li>
+            <li><a href>Google+</a></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    <div id="logo-footer">
+      <img src="../images/render-wind.png">
+    </div>
+  </footer>
   <script src="../build/scripts/all.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
 </body>
 </html>

@@ -1,5 +1,121 @@
 /* app css stylesheet */
 
+/* genneral */
+a:focus {
+  outline: none;
+}
+
+/* nav bar */
+.name .logo {
+  height: 30px;
+}
+/* flat surface-shader */
+#fss-container {
+  position: relative;
+  height: 550px;
+  width: 100%;
+}
+
+/* ui above ffs */
+#ui img.character {
+  position: absolute;
+  top: 1em;
+  right: 10%;
+}
+#ui .intro {
+  position: absolute;
+  top: 5em;
+  left: 10%;
+}
+.intro .text {
+  font-size: 33pt;
+  font-family: impact;
+  color: white;
+}
+.btn-signup {
+  margin-top: 1.5em;
+}
+
+/* info bar */
+#info-bar {
+  //background-color: #ff6633;
+  background-color: black;
+  height: 4.5em;
+  line-height: 4.5em;
+  position: relative;
+  span {
+    margin-left: 10%;
+    color: white;
+  }
+  a {
+    margin-right: 10%;
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    right: 0;
+  }
+}
+
+/* footer */
+body > footer {
+  background-color: black;
+}
+#logo-footer {
+  text-align: center;
+  clear: both;
+  img {
+    width: 150px;
+    margin-bottom: 50px;
+  }
+}
+
+body > footer > .container {
+    color: white;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-family: Cambria Math;
+}
+
+body > footer {
+  a {
+    color: #A5A5A5;
+  }
+  header {
+    font-size: 19pt;
+    margin-top: 2em;
+  }
+  .container ul {
+    margin-left: 0;
+    margin-top: 1em;
+  }
+  .container li {
+    list-style: none;
+  }
+  .left {
+    width: 66%;
+  }
+  .left .left {
+    width: 50%;
+  }
+  .left .right {
+    width: 50%
+  }
+  .left .right section{
+    margin-left: 30%;
+  }
+  .right {
+    width: 33%;
+  }
+  .right section{
+    margin-left: 40%;
+  }
+}
+
+
+
+
+
+/* to be removed */
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;

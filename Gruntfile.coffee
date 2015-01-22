@@ -7,17 +7,17 @@ module.exports = (grunt) ->
     browserify: {
       dist: {
         files: {
-            'build/scripts/browserified_script.js': ['app/*.coffee','app/**/**.coffee','app/**/**/**.coffee'] 
-          },
-          options: {
-            transform: ['coffeeify']
-          }
+          'build/scripts/browserified_script.js': [
+            'app/*.coffee',
+            'app/**/**.coffee',
+            'app/**/**/**.coffee'
+          ] 
+        },
+        options: {
+          transform: ['coffeeify']
+        }
       }
     }
-
-    # coffee: {
-
-    # }
 
     concat: {
       options: {
@@ -26,13 +26,20 @@ module.exports = (grunt) ->
       bower_scripts: {
         src: [
           'assets/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js',
+          'assets/jquery/dist/jquery.js'
+          'assets/foundation/js/foundation.js'
+          'assets/dat-gui/build/dat.gui.min.js'
+          'assets/flat-surface-shader/deploy/fss.min.js'
           'assets/angular/angular.js',
           'assets/angular-route/angular-route.js'
         ]
         dest: 'build/scripts/bower_scripts.js'
       }
       all: {
-        src: ['build/scripts/bower_scripts.js', 'build/scripts/browserified_script.js'],
+        src: [
+          'build/scripts/bower_scripts.js', 
+          'app/fss-setup.js'
+          'build/scripts/browserified_script.js'],
         dest: 'build/scripts/all.js'
       }
     }
@@ -62,6 +69,8 @@ module.exports = (grunt) ->
           'build/styles/bower_styles.css': [
             'assets/html5-boilerplate/css/normalize.css',
             'assets/html5-boilerplate/css/main.css',
+            'assets/foundation/css/normalize.css'
+            'assets/foundation/css/foundation.css'
           ]
           'build/styles/app_styles.css': ['build/styles/app.css']
         }
@@ -77,7 +86,27 @@ module.exports = (grunt) ->
     }
 
     watch: {
-
+      watchCoffee: {
+        files: [
+          'app/*.coffee',
+          'app/**/**.coffee',
+          'app/**/**/**.coffee'
+        ] ,
+        tasks: ['browserify', 'concat']
+      },
+      watchJs: {
+        files: '<%concat.bower_scripts.src.concat("app/fss-setup.js")%>'
+        tasks: ['concat']
+      },
+      # watchCss: {
+      #   files: "<%
+      #     files = []
+      #     for dest, srcFiles of cssmin.combine.files
+      #       files.concat srcFiles
+      #   %>"
+      #   tasks: ['cssmin']
+        
+      # }
     }
   })
 
